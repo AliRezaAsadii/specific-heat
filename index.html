@@ -4,52 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ظرفیت گرمایی ویژه</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body dir="auto">
-    <h1>محاسبه گر ظرفیت گرمایی ویژه</h1>
-    <p>توجه :‌ در این محاسبگر از اتلاف انرژی صرفه جوری شده!</p>
+    <div class="container">
+      <h1>محاسبه‌گر ظرفیت گرمایی ویژه</h1>
+      <p>توجه: در این محاسبه‌گر از اتلاف انرژی صرف‌نظر شده!</p>
 
-    <div>
-        <p>ماده اول</p>
-      <div>
+      <div class="box">
+        <h2>ماده اول</h2>
+        <input type="text" id="mass1" placeholder="جرم (گرم)" required />
         <input
           type="text"
-          placeholder="مقدار ماده بر حسب گرم "
-          required="true"
+          id="specificHeat1"
+          placeholder="ظرفیت گرمایی ویژه (J/kg·K)"
+          required
         />
-        <input
-          type="text"
-          placeholder="ظرفیت گرمایی ویژه بر حسب  J/kg·K "
-          required="true"
-        />
-        <input
-          type="text"
-          placeholder="دمای اولیه بر حسب سلسیوس"
-          required="true"
-        />
+        <input type="text" id="temp1" placeholder="دمای اولیه (°C)" required />
       </div>
-      <p>ماده دوم</p>
-      <div>
-        <input
-          type="text"
-          placeholder="مقدار ماده بر حسب گرم "
-          required="true"
-        />
-        <input
-          type="text"
-          placeholder="ظرفیت گرمایی ویژه بر حسب  J/kg·K "
-          required="true"
-        />
-        <input
-          type="text"
-          placeholder="دمای اولیه بر حسب سلسیوس"
-          required="true"
-        />
-      </div>
-    </div>
 
-    <div>
-        <p>result</p>
+      <div class="box">
+        <h2>ماده دوم</h2>
+        <input type="text" id="mass2" placeholder="جرم (گرم)" required />
+        <input
+          type="text"
+          id="specificHeat2"
+          placeholder="ظرفیت گرمایی ویژه (J/kg·K)"
+          required
+        />
+        <input type="text" id="temp2" placeholder="دمای اولیه (°C)" required />
+      </div>
+
+      <div class="calculator">
+        <button class="button" onclick="calculateFinalTemperature()">
+          محاسبه
+        </button>
+
+        <div class="result" id="result">دمای نهایی: -- °C</div>
+      </div>
     </div>
   </body>
 </html>
