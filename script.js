@@ -10,12 +10,14 @@ const result = document.getElementById("result");
 const btn = document.querySelector(".button");
 
 btn.addEventListener("click", () => {
-    const m1 = parseFloat(mass1.value);
-    const c1 = parseFloat(specificHeat1.value);
-    const t1 = parseFloat(temp1.value);
-    const m2 = parseFloat(mass2.value);
-    const c2 = parseFloat(specificHeat2.value);
-    const t2 = parseFloat(temp2.value);
+    const toEnglishDigits = (str) => str.replace(/[۰-۹]/g, (d) => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
+
+    const m1 = parseFloat(toEnglishDigits(mass1.value));
+    const c1 = parseFloat(toEnglishDigits(specificHeat1.value));
+    const t1 = parseFloat(toEnglishDigits(temp1.value));
+    const m2 = parseFloat(toEnglishDigits(mass2.value));
+    const c2 = parseFloat(toEnglishDigits(specificHeat2.value));
+    const t2 = parseFloat(toEnglishDigits(temp2.value));
 
     if (isNaN(m1) || isNaN(c1) || isNaN(t1) || isNaN(m2) || isNaN(c2) || isNaN(t2)) {
         result.textContent = "لطفا مقدار معتبری وارد کنید!";
